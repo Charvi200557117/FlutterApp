@@ -2,12 +2,12 @@
 import 'package:flutter/material.dart';
 
 class ApiPage extends StatelessWidget {
-  // Add API logic here
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('API Example')),
+      appBar: AppBar(
+        title: Text('Random Dog API'),
+      ),
       body: Center(
         child: Text('API Page Content'),
       ),

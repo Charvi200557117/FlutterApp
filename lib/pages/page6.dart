@@ -1,15 +1,15 @@
-// lib/pages/calculator_page.dart
+// lib/pages/page6.dart
 import 'package:flutter/material.dart';
 
-class CalculatorPage extends StatelessWidget {
+class Page6 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Simple Calculator'),
+        title: Text('Page 6'),
       ),
       body: Center(
-        child: Text('Calculator Page Content'),
+        child: Text('Page 6 Content'),
       ),
     );
   }
