@@ -50,18 +50,18 @@ class GreetingPage extends StatelessWidget {
                   color: Colors.white,
                 ),
               ),
-              // SizedBox(height: 20),
-              // // Navigation Buttons
-              // ElevatedButton(
-              //   onPressed: () {
-              //     // Navigate to the second page
-              //     Navigator.push(
-              //       context,
-              //       MaterialPageRoute(builder: (context) => CalculatorApp()),
-              //     );
-              //   },
-              //   child: Text('Go to Fifth Page'),
-              // ),
+              SizedBox(height: 20),
+              // Navigation Buttons
+              ElevatedButton(
+                onPressed: () {
+                  // Navigate to the second page
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => CalculatorApp()),
+                  );
+                },
+                child: Text('Go to Calculator Page'),
+              ),
               SizedBox(height: 10),
               ElevatedButton(
                 onPressed: () {
@@ -71,7 +71,7 @@ class GreetingPage extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => RandomDogApp()),
                   );
                 },
-                child: Text('Go to Sixth Page'),
+                child: Text('Go to Random Dog Api Generator Page'),
               ),
               SizedBox(height: 10),
               ElevatedButton(
@@ -82,7 +82,7 @@ class GreetingPage extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => NotesApp()),
                   );
                 },
-                child: Text('Go to Seventh Page'),
+                child: Text('Go to Add Notes Page'),
               ),
             ],
           ),
