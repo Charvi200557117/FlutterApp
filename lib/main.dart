@@ -15,12 +15,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'My Flutter App',
-      initialRoute: '/',
+      initialRoute: '/', // Set the initial route to the GreetingPage
       getPages: [
-        GetPage(name: '/', page: () => GreetingPage()),
-        // GetPage(name: '/calculator', page: () => CalculatorApp()),
-        GetPage(name: '/api', page: () => RandomDogApp()),
-        GetPage(name: '/notes', page: () => NotesApp()),
+        GetPage(name: '/', page: () => GreetingPage()), // Route for the GreetingPage
+        GetPage(name: '/calculator', page: () => CalculatorApp()), // Route for the CalculatorApp
+        GetPage(name: '/api', page: () => RandomDogApp()), // Route for the RandomDogApp
+        GetPage(name: '/notes', page: () => NotesApp()), // Route for the NotesApp
       ],
       theme: ThemeData(
         primarySwatch: Colors.blue,

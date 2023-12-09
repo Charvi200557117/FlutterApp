@@ -1,8 +1,8 @@
 // lib/pages/greeting_page.dart
 import 'package:flutter/material.dart';
-import 'calculator.dart'; 
-import 'api.dart'; 
-import 'notes.dart'; 
+import 'calculator.dart'; // Import the calculator page
+import 'api.dart'; // Import the API page
+import 'notes.dart'; // Import the notes page
 
 class GreetingPage extends StatelessWidget {
   @override
@@ -39,7 +39,7 @@ class GreetingPage extends StatelessWidget {
               Image.network(
                 'https://i.pinimg.com/736x/31/de/4e/31de4e9b4492297c63001c20f5eb4e54.jpg', // Replace with your actual network image URL
                 width: 200,
-                height:200,
+                height: 200,
               ),
               SizedBox(height: 20),
               Text(
@@ -54,7 +54,7 @@ class GreetingPage extends StatelessWidget {
               // Navigation Buttons
               ElevatedButton(
                 onPressed: () {
-                  // Navigate to the second page
+                  // Navigate to the calculator page
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => CalculatorApp()),
@@ -65,7 +65,7 @@ class GreetingPage extends StatelessWidget {
               SizedBox(height: 10),
               ElevatedButton(
                 onPressed: () {
-                  // Navigate to the sixth page
+                  // Navigate to the random dog API generator page
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => RandomDogApp()),
@@ -76,7 +76,7 @@ class GreetingPage extends StatelessWidget {
               SizedBox(height: 10),
               ElevatedButton(
                 onPressed: () {
-                  // Navigate to the seventh page
+                  // Navigate to the notes page
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => NotesApp()),

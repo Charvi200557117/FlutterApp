@@ -23,7 +23,9 @@ class NotesScreen extends StatefulWidget {
 }
 
 class _NotesScreenState extends State<NotesScreen> {
+  // List to store the notes
   List<String> notes = [];
+  // Controller for the text input field
   TextEditingController noteController = TextEditingController();
 
   @override
@@ -34,6 +36,7 @@ class _NotesScreenState extends State<NotesScreen> {
       ),
       body: Column(
         children: [
+          // Text input field to add a new note
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: TextField(
@@ -43,6 +46,7 @@ class _NotesScreenState extends State<NotesScreen> {
               ),
             ),
           ),
+          // Button to add a new note
           ElevatedButton(
             onPressed: () {
               addNote();
@@ -50,6 +54,7 @@ class _NotesScreenState extends State<NotesScreen> {
             child: Text('Add Note'),
           ),
           SizedBox(height: 20),
+          // Display the list of notes using a ListView
           Expanded(
             child: ListView.builder(
               itemCount: notes.length,
@@ -66,6 +71,7 @@ class _NotesScreenState extends State<NotesScreen> {
     );
   }
 
+  // Function to add a new note to the list
   void addNote() {
     String newNote = noteController.text.trim();
     if (newNote.isNotEmpty) {

@@ -34,6 +34,7 @@ class _RandomDogScreenState extends State<RandomDogScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            // Display the dog image or a loading indicator
             imageUrl.isNotEmpty
                 ? Image.network(
                     imageUrl,
@@ -43,6 +44,7 @@ class _RandomDogScreenState extends State<RandomDogScreen> {
                   )
                 : CircularProgressIndicator(),
             SizedBox(height: 20),
+            // Button to fetch a new random dog image
             ElevatedButton(
               onPressed: () {
                 fetchRandomDog();
@@ -55,18 +57,29 @@ class _RandomDogScreenState extends State<RandomDogScreen> {
     );
   }
 
+  // Function to fetch a random dog image from the API
   Future<void> fetchRandomDog() async {
-    final response = await http.get(Uri.parse('https://dog.ceo/api/breeds/image/random'));
+    try {
+      // Send a GET request to the Dog API
+      final response = await http.get(Uri.parse('https://dog.ceo/api/breeds/image/random'));
 
-    if (response.statusCode == 200) {
-      final Map<String, dynamic> data = json.decode(response.body);
-      final String dogImageUrl = data['message'];
-      setState(() {
-        imageUrl = dogImageUrl;
-      });
-    } else {
-      // Handle error
-      print('Failed to fetch a random dog. Status code: ${response.statusCode}');
+      // Check if the response status code is 200 (OK)
+      if (response.statusCode == 200) {
+        // Parse the JSON response
+        final Map<String, dynamic> data = json.decode(response.body);
+        // Extract the dog image URL from the response
+        final String dogImageUrl = data['message'];
+        // Update the state to display the new dog image
+        setState(() {
+          imageUrl = dogImageUrl;
+        });
+      } else {
+        // Handle error if the response status code is not 200
+        print('Failed to fetch a random dog. Status code: ${response.statusCode}');
+      }
+    } catch (error) {
+      // Handle other errors that may occur during the request
+      print('Error fetching a random dog: $error');
     }
   }
 }
